@@ -1,0 +1,86 @@
+@media print {
+  @page { size: A4 landscape; margin: 1cm; }
+
+  table {
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.month {
+  margin: 1em 0 0.5em;
+}
+
+table {
+  width: 100%;
+  margin: auto;
+  border: none;
+  border-collapse: collapse;
+}
+
+table.month {
+  border: 1px solid #444;
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 0.3em;
+}
+
+th {
+  background: #eee;
+  height: 2em;
+  font-size: 0.9em;
+}
+
+td {
+  width: 14.28%;
+  height: 4.5em;
+  vertical-align: top;
+  text-align: left;
+  font-size: 1em;
+}
+
+/* Weekend shading */
+.weekend {
+  background: #f0f0f0;
+}
+
+/* Optional: for holidays */
+.holiday {
+  background: #d9d9d9;
+}
+
+/* Week number column */
+.weeknumber {
+  font-size: 0.75em;
+  color: #666;
+  text-align: center;
+  background-color: #f9f9f9;
+  width: 2em;
+  min-width: 2em;
+  max-width: 2em;
+  border-right: 1px solid #444;
+}
+
+/* Week number header cell (empty, but styled to match) */
+th.weeknumber {
+  background: #f9f9f9;
+  border: 1px solid #444;
+}
+
+.noday {
+  background-color: #f7f7f7;
+}
