@@ -1,0 +1,11 @@
+holidays:
+  - name: "Semesterferien"
+    start: 2026-02-07
+    end: 2026-03-01
+
+  - name: "Rektorstag"
+    date: 2026-05-15
+
+  - name: "Sommerferien"
+    start: 2026-07-04
+    end: 2026-09-30

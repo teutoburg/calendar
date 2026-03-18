@@ -1,10 +1,14 @@
 @media print {
-  @page { size: A4 landscape; margin: 1cm; }
+  @page { size: A4 landscape; margin: 3mm; }
 
   table {
     page-break-after: always;
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  .month {
+    margin: 0.3em 0;
   }
 }
 
@@ -28,6 +32,7 @@ table {
   margin: auto;
   border: none;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 table.month {
@@ -46,21 +51,42 @@ th {
 }
 
 td {
-  width: 14.28%;
   height: 4.5em;
   vertical-align: top;
   text-align: left;
   font-size: 1em;
 }
 
-/* Weekend shading */
-.weekend {
+/* Shading hierarchy: uni (lightest) < weekend < public (strongest) */
+.holiday-uni {
   background: #f0f0f0;
 }
 
-/* Optional: for holidays */
-.holiday {
-  background: #d9d9d9;
+.weekend {
+  background: #e0e0e0;
+}
+
+.holiday-public {
+  background: #c0c0c0;
+}
+
+/* Holiday labels */
+.holiday-label {
+  display: block;
+  font-size: 0.65em;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.holiday-range-label td {
+  font-size: 0.6em;
+  color: #999;
+  height: 1.2em;
+  padding: 0;
+  text-align: center;
+  background: #f0f0f0;
 }
 
 /* Week number column */
@@ -72,12 +98,6 @@ td {
   width: 2em;
   min-width: 2em;
   max-width: 2em;
-  border-right: 1px solid #444;
-}
-
-/* Week number header cell (empty, but styled to match) */
-th.weeknumber {
-  background: #f9f9f9;
   border: 1px solid #444;
 }
 
